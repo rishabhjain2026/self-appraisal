@@ -21,7 +21,7 @@ const Login = () => {
                     console.log("Login Success");
                     alert('Login successful!');
                     // Navigate to the rishabh.html page (external HTML file)
-                    window.location.href = 'http://www.cricbuzz.com/cricket-videos/128294/is-rishabh-pant-injured-why-did-he-bat-at-no-7-vs-delhi';  // Redirect to the HTML file
+                    window.location.href = 'https://minor-ten-red.vercel.app/';  // Redirect to the HTML file
                 } else {
                     alert('Incorrect password! Please try again.');
                 }

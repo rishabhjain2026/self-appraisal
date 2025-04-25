@@ -8,8 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/practice_mern');
+mongoose.connect('mongodb+srv://rishabh26bc050:N6mq4ITXsKdMZqjg@cluster0.hwzypci.mongodb.net/');
 
+//mongodb://localhost:27017/practice_mern
+//mongodb+srv://rj1609:1234567896321@cluster0.3bpzk.mongodb.net/
 // Login/Register APIs (unchanged)
 app.post('/register', (req, res) => {
     const { email } = req.body;
