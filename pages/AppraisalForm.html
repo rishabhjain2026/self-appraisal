@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Self-Appraisal Form</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0d6efd", secondary: "#6c757d" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+      input[type=number] {
+          -moz-appearance: textfield;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header
+      class="bg-primary text-white py-4 px-6 flex justify-between items-center shadow-md"
+    >
+      <div class="flex items-center">
+        <img
+          src="https://readdy.ai/api/search-image?query=university%20logo%2C%20minimalist%2C%20blue%20and%20white%2C%20educational%20institution%20emblem%2C%20professional%2C%20clean%20design&width=150&height=40&seq=1&orientation=landscape"
+          alt="SRM University Logo"
+          class="h-8 mr-4"
+        />
+        <div>
+          <h1 class="text-xl font-semibold">Faculty Self-Appraisal Form</h1>
+          <p class="text-sm opacity-90">As per UGC Proforma (Annexure A11)</p>
+        </div>
+      </div>
+      <div class="relative">
+        <button
+          id="userDropdown"
+          class="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-button transition-colors"
+        >
+          <div
+            class="w-8 h-8 flex items-center justify-center mr-2 bg-white text-primary rounded-full"
+          >
+            <i class="ri-user-line"></i>
+          </div>
+          <span>Dr. John Doe</span>
+          <div class="w-4 h-4 flex items-center justify-center ml-2">
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+        </button>
+        <div
+          id="userMenu"
+          class="absolute right-0 mt-2 w-48 bg-white rounded shadow-lg z-10 hidden"
+        >
+          <ul class="py-1">
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Settings</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-6 flex flex-wrap">
+      <!-- Sidebar -->
+      <div class="w-full md:w-1/4 lg:w-1/5 pr-4">
+        <div class="bg-white rounded shadow-sm mb-6">
+          <div class="p-4 border-b border-gray-100">
+            <h2 class="text-lg font-medium text-gray-800">
+              Appraisal Sections
+            </h2>
+          </div>
+          <nav class="py-2">
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 bg-primary text-white"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-user-line"></i>
+              </div>
+              <span>1. Personal Information</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-book-open-line"></i>
+              </div>
+              <span>2. Teaching & Learning</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-file-paper-2-line"></i>
+              </div>
+              <span>3. Research & Publications</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-group-line"></i>
+              </div>
+              <span>4. Conferences & Workshops</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-community-line"></i>
+              </div>
+              <span>5. Extension Activities</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-list-check"></i>
+              </div>
+              <span>6. Administrative Duties</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-award-line"></i>
+              </div>
+              <span>7. Awards & Recognitions</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-3">
+                <i class="ri-file-list-3-line"></i>
+              </div>
+              <span>8. Self Assessment</span>
+            </a>
+          </nav>
+          <div class="p-4 border-t border-gray-100">
+            <div class="mb-1 flex justify-between items-center">
+              <span class="text-sm text-gray-600">Progress</span>
+              <span class="text-sm font-medium text-gray-700">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-primary h-2 rounded-full" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="w-full md:w-3/4 lg:w-4/5">
+        <!-- Personal Information Section -->
+        <div class="bg-white rounded shadow-sm mb-6 p-6">
+          <div class="flex items-center mb-6">
+            <div
+              class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3"
+            >
+              <i class="ri-user-line"></i>
+            </div>
+            <h2 class="text-xl font-medium text-gray-800">
+              1. Personal Information
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="designation"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Designation</label
+              >
+              <input
+                type="text"
+                id="designation"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="department"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Department</label
+              >
+              <input
+                type="text"
+                id="department"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="qualification"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Highest Qualification</label
+              >
+              <input
+                type="text"
+                id="qualification"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="experience"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Total Experience (Years)</label
+              >
+              <input
+                type="number"
+                id="experience"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label
+                for="academic-year"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Academic Year</label
+              >
+              <input
+                type="text"
+                id="academic-year"
+                placeholder="YYYY-YYYY"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-end">
+            <button
+              class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-button flex items-center !rounded-button whitespace-nowrap"
+            >
+              <span>Next Section</span>
+              <div class="w-5 h-5 flex items-center justify-center ml-2">
+                <i class="ri-arrow-right-line"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Teaching & Learning Section -->
+        <div class="bg-white rounded shadow-sm mb-6 p-6">
+          <div class="flex items-center mb-6">
+            <div
+              class="w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-700 rounded-full mr-3"
+            >
+              <i class="ri-book-open-line"></i>
+            </div>
+            <h2 class="text-xl font-medium text-gray-800">
+              2. Teaching & Learning
+            </h2>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-medium text-gray-700 mb-4">
+              2.1 Courses Taught
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-200">
+                <thead>
+                  <tr>
+                    <th
+                      class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Course Code
+                    </th>
+                    <th
+                      class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Course Title
+                    </th>
+                    <th
+                      class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      UG/PG
+                    </th>
+                    <th
+                      class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Semester
+                    </th>
+                    <th
+                      class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      No. of Students
+                    </th>
+                    <th
+                      class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                      <input
+                        type="text"
+                        class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      />
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                      <input
+                        type="text"
+                        class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      />
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                      <div class="relative">
+                        <select
+                          class="appearance-none w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-8"
+                        >
+                          <option value="" disabled selected>Select</option>
+                          <option value="UG">UG</option>
+                          <option value="PG">PG</option>
+                        </select>
+                        <div
+                          class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                        >
+                          <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                      <input
+                        type="text"
+                        class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      />
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                      <input
+                        type="number"
+                        class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      />
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                      <button
+                        class="inline-flex items-center justify-center p-2 border border-transparent rounded-full text-red-600 hover:bg-red-50"
+                      >
+                        <div class="w-5 h-5 flex items-center justify-center">
+                          <i class="ri-delete-bin-line"></i>
+                        </div>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="px-4 py-3">
+                      <button
+                        class="inline-flex items-center text-primary hover:text-blue-700"
+                      >
+                        <div
+                          class="w-5 h-5 flex items-center justify-center mr-1"
+                        >
+                          <i class="ri-add-line"></i>
+                        </div>
+                        <span>Add Course</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const userDropdown = document.getElementById("userDropdown");
+        const userMenu = document.getElementById("userMenu");
+
+        userDropdown.addEventListener("click", function () {
+          userMenu.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", function (event) {
+          if (
+            !userDropdown.contains(event.target) &&
+            !userMenu.contains(event.target)
+          ) {
+            userMenu.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
